@@ -24,7 +24,7 @@ export const auth = async(req, res, next) => {
 
         next();
     }catch(error){
-        console.log("Error in auth: ",error);
+        // console.log("Error in auth: ",error);
         if(error.message === "jwt malformed"){
             return res.status(403).json({status:false, message: "Not authorized, token failed"})
         } else{
