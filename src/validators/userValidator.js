@@ -6,26 +6,9 @@ export const registerValidator = () => celebrate({
         email: Joi.string().email().required(),
         password: Joi.string().required(),
         // profileImage: Joi.string().required(),
+        is_verified: Joi.boolean().default(false)
     })
 })
-
-
-// export const registerValidator = () => (req, res, next) => {
-//     const schema = Joi.object({
-//         email: Joi.string().email().required(),
-//         password: Joi.string().required(),
-//     })
-
-//     const { error } = schema.validate(req.body)
-
-//     if(error){
-//         return res.status(400).json({status: false, message: error.details[0].message})
-//     }
-//     if(!req.file){
-//         return res.status(400).json({status: false, message: "Profile image is required"})
-//     }
-//     next();
-// }
 
 
 export const loginValidator = () => celebrate({

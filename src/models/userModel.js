@@ -13,6 +13,13 @@ const User = sequelize.define("user", {
     profile_image: {
         type: DataTypes.STRING
     },
+    is_verified: {
+        type: DataTypes.BOOLEAN
+    },
+    verificationTokenCreatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+    }
 },  {
         timestamps: true,
         modelName:"user"
